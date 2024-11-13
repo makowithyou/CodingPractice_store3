@@ -133,7 +133,8 @@ section.products div.img_text {
     margin-top: 70px;
 }
 section.products img {
-    width: 301px;
+    max-width: 301px;
+    width: 100%;
 }
 section.products div.text {
     position: absolute;
