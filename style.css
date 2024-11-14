@@ -42,6 +42,7 @@ p.copy {
     color: #fff;
 }
 div.container {
+    width: 100%;
     max-width: 1024px;
     margin: 0 auto;
 }
@@ -50,7 +51,7 @@ div.container {
 
 /* 狭い画面向けの既定の CSS レイアウト値 */
 header,
-section#News,
+section#News div.container,
 section#Products h2,
 section#Products span,
 footer div {
@@ -61,6 +62,7 @@ header {
     height: 600px;
     background-image: url(https://lh3.googleusercontent.com/d/1BPJPCpVrRjGzs1kJnxkmmX80pRNcuz3_);
     background-position: center;
+    background-repeat: no-repeat;
     padding: 20px;
     position: relative;
 }
@@ -94,7 +96,7 @@ header div.button a {
 section.news {
     background-color: var(--main-bg-color);
     width: 100%;
-    padding: 20px;
+    padding: 0 20px;
     padding-top: 80px;
 }
 section.news span {
@@ -108,11 +110,15 @@ section.news h2 {
     margin-right: 15px;
     margin-left: 30px;
 }
-section.news div {
+section.news div.news_col:nth-of-type(n + 4) {
+    display: none;
+}
+section.news div.news_col {
     border-right: 1px solid #000000;
     padding: 15px 12px;
+    margin-top: 20px;
 }
-section.news div:last-of-type {
+section.news div.news_col:nth-of-type(3) {
     border-left: 1px solid #000000;
 }
 section.products {
@@ -138,7 +144,6 @@ section.products img {
 }
 section.products div.text {
     position: absolute;
-    height: 100px;
     bottom: -20px;
     padding: 30px 32px;
     width: 192px;
@@ -152,7 +157,7 @@ section.products div.products1 {
     justify-content: center;
     margin-bottom: 80px;
 }
-section.products div.products1 h2 {
+section.products div.products1 div.title {
     margin-left: 10px;
 }
 section.products div.products1 div.text {
@@ -164,7 +169,7 @@ section.products div.products2 {
     display: flex;
     justify-content: center;
 }
-section.products div.products2 h2 {
+section.products div.products2 div.title {
     margin-right: 10px;
 }
 section.products div.products2 div.text {
@@ -218,4 +223,80 @@ footer p.copy {
 }
 @media (min-width: 768px) {
   /* 広い画面向けの CSS */
+
+header {
+    background-image: url("https://lh3.googleusercontent.com/d/1RmOOFA7RHw08s-oTS4XQ9pBB3SbpROiJ");
+    padding: 60px 80px;
+}
+header div.button {
+    left: 40px;
+    bottom: 30px;
+}
+section#News {
+    padding-top: 180px;
+}
+section.news h2 {
+    font-size: 36px;
+    margin-left: 100px;
+}
+section.news div.news_col {
+    margin-top: 80px;
+    padding: 15px 30px;
+}
+section.news div.news_col:nth-of-type(n + 4) {
+    display: block;
+}
+section.news div.news_col:nth-of-type(3) {
+    border-left: unset;
+}
+section.news div.news_col:nth-of-type(5) {
+    border-left: 1px solid #000000;
+}
+section.products {
+    padding-top: 180px;
+    padding-bottom: 160px;
+}
+section.products span {
+    display: block;
+    font-size: 14px;
+    margin: 0 auto;
+    padding-top: 18px;
+}
+section.products h2 {
+    font-size: 32px;
+}
+section.products div.products1 div.title {
+    margin-left: 20px;
+}
+section.products div.products2 div.title {
+    margin-right: 20px;
+}
+section.products img {
+    max-width: 639px;
+}
+section.products div.text {
+    width: 358px;
+    padding: 50px 115px;
+    text-align: center;
+}
+section.products div.products1 {
+    margin-bottom: 160px;
+}
+section.products div.products1,
+section.products div.products2 {
+    justify-content: flex-start;
+}
+footer {
+    padding: 80px 80px 30px 30px;
+}
+footer img.logo {
+    margin-left: 60px;
+}
+footer ul {
+    margin-right: 60px;
+}
+footer li {
+    font-size: 16px;
+    margin-left: 32px;
+}
 }
