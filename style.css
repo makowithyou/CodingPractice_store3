@@ -226,7 +226,9 @@ footer p.copy {
 
 header {
     background-image: url("https://lh3.googleusercontent.com/d/1RmOOFA7RHw08s-oTS4XQ9pBB3SbpROiJ");
+    background-repeat: repeat-x;
     padding: 60px 80px;
+    height: 100vh;
 }
 header div.button {
     left: 40px;
